@@ -1,0 +1,512 @@
+/* =======================
+   THEME VARIABLES
+======================= */
+:root {
+    --dark-1: #222831;
+    --dark-2: #393E46;
+    --accent: #948979;
+    --text-main: #DFD0B8;
+
+    --danger-bg: rgba(255, 80, 80, 0.12);
+    --danger-border: #ff7a7a;
+
+    --success-bg: rgba(120, 255, 170, 0.12);
+    --success-border: #7CFC98;
+}
+
+/* ======================
+   RESET
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+/* ======================
+   BACKGROUND
+====================== */
+body {
+    background: linear-gradient(180deg, #222831, #1b2027);
+    min-height: 100vh;
+    color: #DFD0B8;
+}
+
+/* ======================
+   CENTER
+====================== */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* ======================
+   CARD
+====================== */
+.card {
+    width: 100%;
+    max-width: 980px;
+    background-color: #393E46;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid #948979;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* ======================
+   TITLE
+====================== */
+.card h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #DFD0B8;
+}
+
+/* ======================
+   ERROR
+====================== */
+.error {
+    background-color: #2a1f1f;
+    border: 1px solid #ff9e9e;
+    color: #ffb4b4;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ======================
+   FORM
+====================== */
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+form input,
+form select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #948979;
+    background-color: #222831;
+    color: #DFD0B8;
+    font-size: 14px;
+}
+
+form input::placeholder {
+    color: #948979;
+}
+
+/* BUTTON */
+form button {
+    grid-column: span 3;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #948979;
+    background-color: #222831;
+    color: #DFD0B8;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+form button:hover {
+    background-color: #948979;
+    color: #222831;
+    transform: translateY(-2px);
+}
+
+/* ======================
+   TABLE
+====================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+thead th {
+    background-color: #222831;
+    color: #DFD0B8;
+    border: 1px solid #948979;
+    padding: 10px;
+}
+
+tbody td {
+    border: 1px solid #948979;
+    padding: 10px;
+    text-align: center;
+    color: #DFD0B8;
+}
+
+/* ROW HOVER */
+tbody tr:hover {
+    background-color: #2b313a;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 900px) {
+    form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form button {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 24px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    form button {
+        grid-column: span 1;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+.btn-back {
+    text-align: center;
+}
+
+.btn-back a {
+    text-align: center;
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #948979;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #948979;
+    background: #222831;
+    color: #DFD0B8;
+}
+
+.search-form button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #948979;
+    background: #222831;
+    color: #DFD0B8;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: #948979;
+    color: #222831;
+}
+
+.hapus {
+    text-decoration: none;
+    color: #948979;
+}
+
+.hapus:hover {
+    
+    color: #ff0000;
+}
+
+/* =======================
+   PAGINATION
+======================= */
+.pagination-wrapper {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.page-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 0 6px;
+    border: 1px solid #948979;
+    border-radius: 8px;
+    color: #DFD0B8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.page-btn:hover {
+    background-color: #DFD0B8;
+    color: #222831;
+}
+
+.page-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.page-info {
+    color: #948979;
+    font-size: 13px;
+    margin: 0 10px;
+}
+
+/* =======================
+   BACK LINK
+======================= */
+.back-area {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.back-area a {
+    font-size: 13px;
+    color: #948979;
+    text-decoration: none;
+}
+
+.back-area a:hover {
+    text-decoration: underline;
+}
+
+/* =======================
+   ACTION BUTTON
+======================= */
+table td a {
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #948979;
+    color: #DFD0B8;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+table td a:hover {
+    background-color: #948979;
+    color: #222831;
+}
+
+/* =============================
+   PAGE ENTER ANIMATION
+============================= */
+
+/* CARD MASUK */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    animation: cardEnter 0.8s ease-out forwards;
+}
+
+@keyframes cardEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ITEM STAGGER */
+.animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: itemEnter 0.6s ease-out forwards;
+}
+
+/* URUTAN MUNCUL */
+.animate-item:nth-of-type(1) { animation-delay: 0.2s; }
+.animate-item:nth-of-type(2) { animation-delay: 0.35s; }
+.animate-item:nth-of-type(3) { animation-delay: 0.5s; }
+.animate-item:nth-of-type(4) { animation-delay: 0.65s; }
+.animate-item:nth-of-type(5) { animation-delay: 0.8s; }
+.animate-item:nth-of-type(6) { animation-delay: 0.95s; }
+
+
+@keyframes itemEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =======================
+   ALERT BOX
+======================= */
+.error,
+.success {
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 14px;
+    backdrop-filter: blur(6px);
+    animation: fadeSlide .5s ease forwards;
+}
+
+.error {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: #ffb4b4;
+}
+
+.success {
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: #9affc7;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-box {
+  background: #393E46;
+  padding: 26px;
+  border-radius: 18px;
+  width: 340px;
+  border: 1px solid #948979;
+  text-align: center;
+  animation: zoom .25s ease;
+}
+
+.modal-box p {
+  font-size: 14px;
+  color: #948979;
+  margin-bottom: 18px;
+}
+
+.modal-action {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-action button,
+.modal-action a {
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: 1px solid #948979;
+  background: transparent;
+  color: #DFD0B8;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-action .danger {
+  border-color: #ff6b6b;
+  color: #ff9e9e;
+}
+
+@keyframes zoom {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-box {
+  width: 360px;
+  background: rgba(20,20,20,0.95);
+  border-radius: 16px;
+  padding: 24px;
+  color: #eee;
+  box-shadow: 0 0 40px rgba(0,0,0,.7);
+  animation: pop .25s ease;
+}
+
+.modal-box h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.modal-box p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #444;
+  color: #ddd;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  background: #ff4d4d;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-danger:hover {
+  background: #ff2f2f;
+}
+
+@keyframes pop {
+  from { transform: scale(.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,128 @@
+:root {
+  --dark-1: #222831;
+  --dark-2: #393E46;
+  --accent: #948979;
+  --text:   #DFD0B8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--dark-1), #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text);
+}
+
+/* CARD */
+.card {
+  width: 360px;
+  padding: 32px;
+  border-radius: 14px;
+  background: var(--dark-2);
+  box-shadow:
+    0 0 0 1px rgba(148,137,121,0.25),
+    0 15px 40px rgba(0,0,0,0.6);
+  animation: fadeUp 0.7s ease;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+/* INPUT */
+.input-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #555;
+  outline: none;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+/* FLOAT LABEL */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -12px;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+/* INPUT FOCUS LINE */
+.input-group input:focus {
+  border-bottom-color: var(--accent);
+  box-shadow: 0 2px 0 var(--accent);
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  padding: 11px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+button:hover {
+  background: var(--accent);
+  color: var(--dark-1);
+  box-shadow: 0 0 18px rgba(148,137,121,0.6);
+}
+
+/* LINK */
+p {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ANIMASI */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,212 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+/* BACKGROUND */
+body {
+    background-color: #222831;
+    min-height: 100vh;
+}
+
+/* CENTER */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background-color: #393E46;
+    width: 100%;
+    max-width: 380px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #948979;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+/* TITLE */
+.title {
+    color: #DFD0B8;
+    font-size: 2rem;
+    margin-bottom: 8px;
+
+}
+
+/* SUBTITLE */
+.subtitle {
+    color: #948979;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* CHECK AREA */
+.check-area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.check-area input {
+    display: none;
+}
+
+.check-area label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #948979;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: left;
+}
+
+/* CHECKBOX */
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #948979;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.check-area input:checked + label .checkmark {
+    background-color: #948979;
+}
+
+.check-area input:checked + label .checkmark::after {
+    content: "✔";
+    color: #222831;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
+/* BUTTON */
+.menu {
+    margin-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #948979;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* DISABLED */
+.btn.disabled {
+    background-color: #222831;
+    color: #948979;
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+/* ENABLED */
+.btn.enabled {
+    background-color: #948979;
+    color: #222831;
+    cursor: pointer;
+    animation: pop 0.3s ease;
+}
+
+.btn.enabled:hover {
+    background-color: #DFD0B8;
+}
+
+/* WARNING */
+.warning {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #DFD0B8;
+}
+
+/* ANIMATION */
+@keyframes pop {
+    0% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.shake {
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+    .card {
+        padding: 24px;
+    }
+
+    .title {
+        
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+    }
+}
+
+/* =============================
+   PAGE ENTER ANIMATION
+============================= */
+
+/* Card masuk */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    animation: cardEnter 0.8s ease-out forwards;
+}
+
+@keyframes cardEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Isi card muncul satu-satu */
+.animate-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: itemEnter 0.6s ease-out forwards;
+}
+
+.animate-item:nth-child(1) { animation-delay: 0.2s; }
+.animate-item:nth-child(2) { animation-delay: 0.35s; }
+.animate-item:nth-child(3) { animation-delay: 0.5s; }
+.animate-item:nth-child(4) { animation-delay: 0.65s; }
+.animate-item:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes itemEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
