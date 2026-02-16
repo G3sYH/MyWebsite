@@ -1,0 +1,12 @@
+# Database config
+db.php
+
+# Environment
+.env
+
+# Vendor (kalau pakai composer)
+vendor/
+
+# OS junk
+.DS_Store
+Thumbs.db
