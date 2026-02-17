@@ -8,16 +8,18 @@
 body {
     background: linear-gradient(180deg, #222831, #1b2027);
     min-height: 100vh;
-}
 
-.container {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 }
 
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
 .card {
     background-color: #393E46;
     width: 100%;
@@ -115,4 +117,40 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
   appearance: none; /* Standard property */
+}
+
+/* =============================
+   PAGE ENTER ANIMATION
+============================= */
+
+/* CARD */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    animation: cardEnter 0.7s ease-out forwards;
+}
+
+@keyframes cardEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ITEM */
+.animate-item {
+    opacity: 0;
+    transform: translateY(18px);
+}
+
+/* dipicu oleh JS */
+.animate-item.show {
+    animation: itemEnter 0.45s ease-out forwards;
+}
+
+@keyframes itemEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

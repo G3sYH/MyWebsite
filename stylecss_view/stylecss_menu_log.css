@@ -1,0 +1,169 @@
+:root{
+  --bg:#222831;
+  --card:#393E46;
+  --accent:#948979;
+  --text:#DFD0B8;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:monospace;
+}
+
+body{
+  background:var(--bg);
+  min-height:100vh;
+  color:var(--text);
+}
+
+.container{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  width:100%;
+  max-width:460px;
+  padding:36px 32px;
+  border-radius:20px;
+  border:1px solid var(--accent);
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+  text-align:center;
+}
+
+/* HEADER */
+.title{
+  font-size:1.7rem;
+  margin-bottom:6px;
+}
+
+.subtitle{
+  font-size:.9rem;
+  color:var(--accent);
+  margin-bottom:26px;
+}
+
+/* LOG LIST */
+.log-list{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-bottom:24px;
+}
+
+.log-item{
+  background:var(--card);
+  border:1px solid rgba(148,137,121,.25);
+  border-radius:14px;
+  padding:14px 16px;
+  text-align:left;
+
+  transition:.25s ease;
+}
+
+/* HOVER EFFECT */
+.log-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(148,137,121,.25);
+  border-color:var(--accent);
+}
+
+/* LOG HEAD */
+.log-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:6px;
+}
+
+.ver{
+  color:var(--accent);
+  font-weight:bold;
+}
+
+.date{
+  font-size:.75rem;
+  opacity:.6;
+}
+
+.desc{
+  font-size:.85rem;
+  line-height:1.5;
+}
+
+/* BACK */
+.btn-back{
+  display:inline-block;
+  margin-top:6px;
+  color:var(--accent);
+  text-decoration:none;
+  font-size:.85rem;
+}
+
+.btn-back:hover{
+  text-decoration:underline;
+}
+
+/* =============================
+   PAGE ENTER ANIMATION
+============================= */
+
+/* CARD */
+.animate-card{
+  opacity:0;
+  transform:translateY(32px) scale(.96);
+  animation:cardEnter .75s ease-out forwards;
+}
+
+@keyframes cardEnter{
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+/* ITEM */
+.animate-item{
+  opacity:0;
+  transform:translateY(18px);
+}
+
+.animate-item.show{
+  animation:itemEnter .45s ease-out forwards;
+}
+
+@keyframes itemEnter{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.isi {
+  color: #948979;
+}
+
+/* LOG DETAIL (GIT STYLE) */
+.log-detail{
+  margin-top:8px;
+  padding-left:16px;
+  font-size:.78rem;
+  color:var(--accent);
+  line-height:1.6;
+}
+
+.log-detail li{
+  list-style:disc;
+  opacity:.85;
+}
+
+/* hover ikut hidup */
+.log-item:hover .log-detail li{
+  opacity:1;
+}

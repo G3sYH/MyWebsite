@@ -1,10 +1,12 @@
+<?php require_once "../../auth/auth.php"; ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Calculator | G3sYH</title>
+    <title>G3sYH | Project - Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
     <link rel="stylesheet" href="../../stylecss_project/stylecss_project_calculator.css">
 </head>
 <body>

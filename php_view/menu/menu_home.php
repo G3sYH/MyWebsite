@@ -1,3 +1,12 @@
+<?php require_once "../../auth/auth.php"; ?>
+<?php
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../../auth/login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -6,18 +15,22 @@
     <link rel="stylesheet" href="../../stylecss_view/stylecss_menu_home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- <script src="../../js_controller/js_controller_project_home.js" defer></script> -->
+     <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
 </head>
 <body>
 
 <div class="container">
     <div class="card animate-item">
         <h1 class="title animate-item"><a href="../../index.php">G3sYH</a></h1>
-        <p class="subtitle animate-item">Hi, Im Garin Syuhada :)</p>
+        <p class="subtitle animate-item">
+    Hi, <?= htmlspecialchars($_SESSION['username'] ?? 'Guest') ?> :)
+</p>
 
         <div class="menu animate-item">
             <a href="menu_project.php" class="btn animate-item">Project</a>
             <a href="menu_contact.php" class="btn animate-item">Contact</a>
             <a href="menu_about.php" class="btn animate-item">About</a>
+            <a href="../../auth/logout.php" class="btn animate-item">Exit</a>
         </div>
 
         <div class="social animate-item">

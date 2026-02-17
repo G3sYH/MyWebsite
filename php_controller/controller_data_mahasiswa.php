@@ -1,5 +1,4 @@
 <?php
-session_start(); // 🔥 WAJIB
 require_once "../../db.php";
 
 $error = "";

@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require_once "../db.php";
 
@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   session_regenerate_id(true);
   $_SESSION['login'] = true;
   $_SESSION['user_id'] = $user['id'];
+  $_SESSION['username'] = $username;
 
-  header("Location: .../index.php");
-}
+  header("Location: ../index.php");
+} -->

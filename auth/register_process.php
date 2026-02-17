@@ -24,7 +24,7 @@ $cek->store_result();
 
 if ($cek->num_rows > 0) {
     $_SESSION['error'] = "Username sudah digunakan";
-    header("Location: register.php");
+    header("Location: ../php_controller/action.php?type=info&msg=Identify Username&to=../auth/register.php");
     exit;
 }
 
@@ -37,5 +37,5 @@ $stmt->execute();
 $_SESSION['login'] = true;
 $_SESSION['user_id'] = $stmt->insert_id;
 
-header("Location: login.php");
+header("Location: ../php_controller/action.php?type=success&msg=Register Success&to=../auth/login.php");
 exit;

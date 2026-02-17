@@ -12,7 +12,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows !== 1) {
     $_SESSION['error'] = "Username atau password salah";
-    header("Location: login.php");
+    header("Location: ../php_controller/action.php?type=warning&msg=Checking Data&to=../index.php");
     exit;
 }
 
@@ -27,6 +27,8 @@ if (!password_verify($password, $user['password'])) {
 session_regenerate_id(true);
 $_SESSION['login'] = true;
 $_SESSION['user_id'] = $user['id'];
+$_SESSION['username'] = $username; // 🔥 INI YANG HILANG
 
-header("Location: ../index.php");
+header("Location: ../php_controller/action.php?type=success&msg=Berhasil Login&to=../index.php");
 exit;
+

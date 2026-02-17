@@ -1,3 +1,5 @@
+<?php require_once "../../auth/auth.php"; ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,6 +9,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="../../stylecss_view/stylecss_menu_contact.css">
+    <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
 </head>
 <body>
 
@@ -17,12 +20,12 @@
         <p class="subtitle animate-item">Pengen deket? boleh bgt!</p>
 
         <div class="contact-list animate-item">
-            <p><i class="fa-solid fa-envelope"></i> garinsyuhada30@gmail.com</p>
-            <p><i class="fa-brands fa-instagram"></i> @garinsyuhada_</p>
-            <p><i class="fa-brands fa-discord"></i> G3sYH#2960</p>
-            <p><i class="fa-brands fa-github"></i> github.com/G3sYH</p>
-            <p><i class="fa-brands fa-whatsapp"></i> +6287890550922</p>
-        </div>
+    <p><i class="fa-solid fa-envelope"></i>garinsyuhada30@gmail.com</p>
+    <p><i class="fa-brands fa-github"></i>github.com/G3sYH</p>
+    <p><i class="fa-brands fa-whatsapp"></i>+6287890550922</p>
+    <p><i class="fa-brands fa-instagram"></i>@garinsyuhada_</p>
+    <p><i class="fa-brands fa-discord"></i>G3sYH</p>
+</div>
 
         <a href="menu_home.php" class="btn-back animate-item">
             ← Back to Home
@@ -30,6 +33,19 @@
 
     </div>
 </div>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    const items = document.querySelectorAll(".contact-list p");
+
+    items.forEach((el, i) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(18px)";
+        el.style.animation = "itemEnter 0.5s ease-out forwards";
+        el.style.animationDelay = `${0.4 + i * 0.15}s`;
+    });
+
+});
+</script>
 </body>
 </html>

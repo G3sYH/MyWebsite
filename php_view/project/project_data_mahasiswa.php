@@ -1,13 +1,15 @@
-
+<?php require_once "../../auth/auth.php"; ?>
 <?php require_once "../../php_controller/controller_data_mahasiswa.php"; ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Data Mahasiswa</title>
+    <title>G3sYH | Project - Data Mahasiswa</title>
     <link rel="stylesheet" href="../../stylecss_project/stylecss_project_data_mahasiswa.css">
     <script src="../../js_controller/js_controller_data_mahasiswa.js" defer></script>
+    <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
 </head>
 <body>
 

@@ -1,3 +1,5 @@
+<?php require_once "../../auth/auth.php"; ?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,7 +9,7 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
     <link rel="stylesheet" href="../../stylecss_view/stylecss_menu_project.css">
 </head>
 <body>
@@ -15,7 +17,7 @@
 <div class="container">
     <div class="card animate-card">
 
-        <h1 class="title animate-item">My Projects o_0</h1>
+        <h1 class="title animate-item" >My Projects o_0</h1>
         <p class="subtitle animate-item">Campus & personal projects</p>
 
         <!-- PROJECT LIST -->
@@ -111,17 +113,20 @@ function renderProjects() {
     const end = start + perPage;
     const pageProjects = projects.slice(start, end);
 
-    pageProjects.forEach(p => {
-        projectList.innerHTML += `
-            <a href="${p.link}" class="project-item">
-                <div class="project-title">
-                    <i class="fa-solid ${p.icon}"></i>
-                    ${p.title}
-                </div>
-                <p class="project-desc">${p.desc}</p>
-            </a>
-        `;
-    });
+    pageProjects.forEach((p, i) => {
+    projectList.innerHTML += `
+        <a href="${p.link}" 
+           class="project-item"
+           style="animation-delay: ${i * 0.12}s">
+           
+            <div class="project-title">
+                <i class="fa-solid ${p.icon}"></i>
+                ${p.title}
+            </div>
+            <p class="project-desc">${p.desc}</p>
+        </a>
+    `;
+});
 
     pageInfo.textContent = `${currentPage} / ${totalPages}`;
     prevBtn.disabled = currentPage === 1;

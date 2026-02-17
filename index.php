@@ -4,12 +4,13 @@
 <html lang="id"> 
 <head>
     <meta charset="UTF-8">
-    <title>G3sYH | Home</title>
+    <title>G3sYH | Notif</title>
 
     <!-- WAJIB RESPONSIVE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="stylecss_view/stylecss_index.css">
+    <link rel="icon" type="image/png" href="/MyWebsite/img/favicon.png">
 </head>
 <body>
 

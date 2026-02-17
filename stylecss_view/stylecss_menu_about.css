@@ -8,14 +8,17 @@
 body {
     background: linear-gradient(180deg, #222831, #1b2027);
     min-height: 100vh;
-}
 
-.container {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.container {
+    width: 100%;
     padding: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
@@ -114,4 +117,76 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* ABOUT TEXT */
+.about-text {
+    margin-bottom: 16px;
+    opacity: 0.9;
+}
+
+/* PROFILE INFO LIST */
+.profile-info p {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.profile-info span {
+    min-width: 60px;
+    color: #948979;
+}
+
+/* SOCIAL ICONS */
+.social {
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.social a {
+    padding: 6px;
+}
+
+/* FOOTER */
+.footer-log {
+    margin-top: 18px;
+    font-size: 0.75rem;
+    color: #948979;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-log a {
+    color: #948979;
+    text-decoration: none;
+}
+
+.footer-log a:hover {
+    text-decoration: underline;
+}
+
+/* TYPEWRITER */
+.typewriter {
+    min-height: 90px;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    position: relative;
+}
+
+/* cursor */
+.typewriter::after {
+    content: "|";
+    margin-left: 4px;
+    opacity: 1;
+    animation: blink 1s infinite;
+}
+
+.typewriter.done::after {
+    display: none;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
 }
