@@ -1,1 +1,0 @@
-Pakai aja kalo mau
